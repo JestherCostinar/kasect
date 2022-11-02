@@ -12,14 +12,14 @@ class ListingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = [
             'title' => 'Larafinds',
-            'listings' => Listing::all()
+            'listings' => Listing::latest()->filter(request(['tag']))->get()
         ];
 
-        return view('listings', $data);
+        return view('listings.index', $data);
     }
 
     /**
@@ -52,11 +52,11 @@ class ListingController extends Controller
     public function show($id)
     {
         $data = [
-            'title' => 'Listing '. $id,
+            'title' => 'Listing ' . $id,
             'listing' => Listing::findOrFail($id)
         ];
 
-        return view('listing', $data);
+        return view('listings.show', $data);
     }
 
     /**
