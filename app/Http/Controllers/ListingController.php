@@ -16,7 +16,7 @@ class ListingController extends Controller
     {
         $data = [
             'title' => 'Larafinds',
-            'listings' => Listing::latest()->filter(request(['tag']))->get()
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
         ];
 
         return view('listings.index', $data);
