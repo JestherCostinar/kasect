@@ -29,7 +29,11 @@ class ListingController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'title' => 'Create Listing'
+        ];
+
+        return view('listings.create', $data);
     }
 
     /**
@@ -40,7 +44,7 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd('STORE');
     }
 
     /**
@@ -52,7 +56,6 @@ class ListingController extends Controller
     public function show($id)
     {
         $data = [
-            'title' => 'Listing ' . $id,
             'listing' => Listing::findOrFail($id)
         ];
 
