@@ -131,6 +131,9 @@ class ListingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Listing::destroy($id);
+
+        return redirect(route('listing.index'))->with('message', 'Listing deleted successfully!');
+
     }
 }

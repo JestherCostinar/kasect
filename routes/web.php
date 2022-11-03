@@ -20,3 +20,4 @@ Route::post('/listings', [ListingController::class, 'store'])->name('listing.sto
 Route::get('/{id}', [ListingController::class, 'show'])->name('listing.show');
 Route::get('/listings/{id}', [ListingController::class, 'edit'])->name('listing.edit');
 Route::patch('/{id}', [ListingController::class, 'update'])->name('listing.update');
+Route::delete('/{id}', [ListingController::class, 'destroy'])->name('listing.destroy');

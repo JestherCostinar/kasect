@@ -47,6 +47,11 @@
                 </x-card>
                 <x-card class="mt-4 p-2 flex space-x-6">
                     <a href="/listings/{{ $listing->id }}"><i class="fa-solid fa-pencil">Edit</i></a>
+                    <form action="{{ route('listing.destroy', $listing->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                        <button class="text-red-500"><i class="fa-solid fa-trash">Delete</i></button>
+                </form>
                 </x-card>
             </div>
 @endsection
