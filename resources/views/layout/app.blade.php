@@ -43,6 +43,14 @@
                         Manage Listings</a
                     >
                 </li>
+                <li>
+                    <form action="{{ route('user.logout') }}" method="POST" class="inline">
+                    @csrf
+                    <button class="submit">
+                        <i class="fa-solid fa-door-closed">Logout</i>
+                    </button>
+                </form>
+                </li>
                 @else
                 <li>
                     <a href="{{ route('user.register') }}" class="hover:text-laravel"

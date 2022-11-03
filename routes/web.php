@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/register', [UserController::class, 'register'])->name('user.register');
 Route::post('/', [UserController::class, 'store'])->name('user.store');
 
+Route::post('/logout', [UserController::class, 'logout'])->name('user.logout');
+
 
 // LISTING CONTROLLER
 Route::get('/', [ListingController::class, 'index'])->name('listing.index');
