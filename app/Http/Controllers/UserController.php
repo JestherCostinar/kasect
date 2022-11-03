@@ -32,6 +32,27 @@ class UserController extends Controller
         return redirect(route('listing.index'))->with('message', 'User created and logged In');
     }
 
+    public function login()
+    {
+        return view('users.login');
+    }
+
+    public function authenticate(Request $request) {
+        $formFields = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if(auth()->attempt($formFields)) {
+            $request->session()->regenerate();
+
+            return redirect(route('listing.index'))->with('message', 'You are now logged In');
+        }
+
+        return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
+
+    }
+
     public function logout(Request $request) {
         auth()->logout();
 
