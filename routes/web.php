@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// USER CONTROLLER
+
 Route::get('/register', [UserController::class, 'register'])->name('user.register')->middleware('guest');
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/authenticate', [UserController::class, 'authenticate'])->name('user.authenticate');
@@ -31,4 +34,4 @@ Route::get('/listings/{id}', [ListingController::class, 'edit'])->name('listing.
 Route::patch('/{id}', [ListingController::class, 'update'])->name('listing.update')->middleware('auth');
 Route::delete('/{id}', [ListingController::class, 'destroy'])->name('listing.destroy')->middleware('auth');
 
-// USER CONTROLLER
+Route::get('listing/manage', [ListingController::class, 'manage'])->name('listing.manage')->middleware('auth');
