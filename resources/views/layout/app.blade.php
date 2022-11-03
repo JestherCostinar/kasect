@@ -58,7 +58,7 @@
                     >
                 </li>
                 <li>
-                    <a href="{{ route('user.login') }}" class="hover:text-laravel"
+                    <a href="{{ route('login') }}" class="hover:text-laravel"
                         ><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Login</a
                     >

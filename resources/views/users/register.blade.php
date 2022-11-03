@@ -87,7 +87,7 @@
                         <div class="mt-8">
                             <p>
                                 Already have an account?
-                                <a href="{{ route('user.login') }}" class="text-laravel"
+                                <a href="{{ route('login') }}" class="text-laravel"
                                     >Login</a
                                 >
                             </p>
