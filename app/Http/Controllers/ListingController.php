@@ -87,7 +87,12 @@ class ListingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = [
+            'title' => 'Listing Edit',
+            'listing' => Listing::where('id', $id)->first()
+        ];
+
+        return view('listings.edit', $data);
     }
 
     /**
@@ -99,7 +104,23 @@ class ListingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => 'required',
+            'location' => 'required',
+            'website' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'description' => 'required',
+        ]);
+
+        if ($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        Listing::where('id', $id)->update($formFields);
+
+        return back()->with('message', 'Listing edited successfully!');
     }
 
     /**

@@ -18,3 +18,5 @@ Route::get('/', [ListingController::class, 'index'])->name('listing.index');
 Route::get('/listings/create', [ListingController::class, 'create'])->name('listing.create');
 Route::post('/listings', [ListingController::class, 'store'])->name('listing.store');
 Route::get('/{id}', [ListingController::class, 'show'])->name('listing.show');
+Route::get('/listings/{id}', [ListingController::class, 'edit'])->name('listing.edit');
+Route::patch('/{id}', [ListingController::class, 'update'])->name('listing.update');
