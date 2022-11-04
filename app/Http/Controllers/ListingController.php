@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class ListingController extends Controller
 {
+    public function __construct()
+    {
+        // Optional function authorized only user to login to access this contoller
+        // if(auth()->user()->id == auth()->id()) {
+        //     abort(403, 'Unauthorized Action');
+        // }
+    }
+
     /**
      * Display a listing of the resource.
      *
