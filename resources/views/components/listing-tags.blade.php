@@ -14,7 +14,19 @@
         @elseif ($tag == 'Vue')
             bg-emerald-400	
         @elseif ($tag == 'Alpine')
-            bg-cyan-500	
+            bg-cyan-500
+        @elseif ($tag == 'HTML')
+            bg-orange-600
+        @elseif ($tag == 'CSS')
+            bg-blue-500
+        @elseif ($tag == 'JavaScript')
+            bg-yellow-500
+        @elseif ($tag == 'Java')
+            bg-red-400
+        @elseif ($tag == 'Python')
+            bg-yellow-400
+        @elseif ($tag == 'PHP')
+            bg-blue-400
         @endif"><a
                 href="/?tag={{ $tag }}">{{ $tag }}</a>
         </li>

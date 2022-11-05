@@ -58,7 +58,7 @@
                 @auth
                     <div class="hidden sm:flex sm:items-center">
                         <a href="{{ route('listing.manage') }}"
-                            class="text-gray-800 text-base font-semibold hover:text-purple-600 mr-4">Manage Listings</a>
+                            class="text-gray-800 text-base font-semibold hover:text-purple-600 mr-4">Manage Project</a>
 
                         <form action="{{ route('user.logout') }}" method="POST" class="inline">
                             @csrf
