@@ -116,11 +116,12 @@ class ListingController extends Controller
     public function update(Request $request, $id)
     {
         $formFields = $request->validate([
-            'title' => 'required',
-            'company' => 'required',
-            'location' => 'required',
+            'project_name' => 'required',
             'website' => 'required',
+            'developer' => 'required',
             'email' => ['required', 'email'],
+            'telephone' => 'required',
+            'website' => 'required',
             'tags' => 'required',
             'description' => 'required',
         ]);

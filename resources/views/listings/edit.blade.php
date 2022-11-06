@@ -1,40 +1,40 @@
 @extends('layout.app')
 
 @section('content')
-    <x-card class="p-10 max-w-lg mx-auto mt-24">
+    <x-card class="p-10 max-w-6xl mx-auto sm:px-6 lg:px-4 mt-24 mx-4 mb-20">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Edit Gig
+                Edit project
             </h2>
-            <p class="mb-4">Edit: {{ $listing->title }}</p>
+            <p class="mb-4 underline">{{ $listing->project_name }}</p>
         </header>
 
         <form action="{{ route('listing.update', $listing->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('patch')
             <div class="mb-6">
-                <label for="company" class="inline-block text-lg mb-2">Company Name</label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="company"
-                    value="{{ $listing->company }}" />
-                @error('company')
+                <label for="project_name" class="inline-block text-lg mb-2">Project Name</label>
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="project_name"
+                    value="{{ $listing->project_name }}" />
+                @error('project_name')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-6">
-                <label for="title" class="inline-block text-lg mb-2">Job Title</label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title"
-                    placeholder="Example: Senior Laravel Developer" value="{{ $listing->title }}" />
-                @error('title')
+                <label for="website" class="inline-block text-lg mb-2">Website</label>
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="website"
+                    placeholder="Example: Senior Laravel Developer" value="{{ $listing->website }}" />
+                @error('website')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-6">
-                <label for="location" class="inline-block text-lg mb-2">Job Location</label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="location"
-                    placeholder="Example: Remote, Boston MA, etc" value="{{ $listing->location }}" />
-                @error('location')
+                <label for="developer" class="inline-block text-lg mb-2">Develop by:</label>
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="developer"
+                     value="{{ $listing->developer }}" />
+                @error('developer')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
@@ -49,19 +49,19 @@
             </div>
 
             <div class="mb-6">
-                <label for="website" class="inline-block text-lg mb-2">
-                    Website/Application URL
+                <label for="telephone" class="inline-block text-lg mb-2">
+                    Contact number
                 </label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="website"
-                    value="{{ $listing->website }}" />
-                @error('website')
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="telephone"
+                    value="{{ $listing->telephone }}" />
+                @error('telephone')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-6">
                 <label for="tags" class="inline-block text-lg mb-2">
-                    Tags (Comma Separated)
+                    Topics/Tags
                 </label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="tags"
                     placeholder="Example: Laravel, Backend, Postgres, etc" value="{{ $listing->tags }}" />
@@ -96,11 +96,11 @@
             </div>
 
             <div class="mb-6">
-                <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+                <button class="bg-laravel text-white rounded-l py-2 px-4 hover:bg-black float-right hover:text-white-600 hover:border-violet-600 hover:bg-violet-700">
                     Update Gig
                 </button>
 
-                <a href="/" class="text-black ml-4"> Back </a>
+               <a href="/" class="text-white text-sm font-semibold border px-6 py-2 rounded-lg hover:text-black-600 hover:border-gray-500 bg-gray-400"> Back </a>
             </div>
         </form>
     </x-card>
