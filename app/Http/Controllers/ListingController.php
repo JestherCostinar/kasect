@@ -39,7 +39,7 @@ class ListingController extends Controller
     public function create()
     {
         $data = [
-            'title' => 'Create Listing'
+            'title' => 'Create Project'
         ];
 
         return view('listings.create', $data);
