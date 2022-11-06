@@ -9,7 +9,7 @@ class Listing extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'company', 'location', 'website', 'email', 'description', 'tags', 'logo', 'user_id'];
+    protected $fillable = ['project_name', 'website', 'developer', 'email', 'telephone', 'description', 'tags', 'logo', 'user_id'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -18,7 +18,7 @@ class Listing extends Model
         }
 
         if ($filters['search'] ?? false) {
-            $query->where('title', 'like', '%' . request('search') . '%')
+            $query->where('project_name', 'like', '%' . request('search') . '%')
             ->orWhere('description', 'like', '%' . request('search') . '%')
             ->orWhere('tags', 'like', '%' . request('search') . '%');
         }

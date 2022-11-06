@@ -11,7 +11,7 @@
                 </path>
             </svg>
             <div class="ml-4 text-lg leading-7 font-semibold"><a href="{{ route('listing.show', $listing->id) }}"
-                    class="underline text-gray-900 dark:text-white Came">{{ $listing->title }}</a></div>
+                    class="underline text-gray-900 dark:text-white Came">{{ $listing->project_name }}</a></div>
         </div>
 
         <div class="ml-12">
