@@ -6,7 +6,7 @@
             <h2 class="text-2xl font-bold uppercase mb-1">
                 Register
             </h2>
-            <p class="mb-4">Create your account to access your own inventory</p>
+            <p class="mb-4">Create your account to have your own inventory</p>
         </header>
 
         <form action="{{ route('user.store') }}" method="post">
