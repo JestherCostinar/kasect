@@ -21,8 +21,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'Jesther Costinar',
             'email' => 'jesther.jc15@gmail.com'
         ]);
+
         Listing::factory(6)->create([
-            'user_id' => $user->id
+            'user_id' => '1'
         ]);
         // \App\Models\User::factory(10)->create();
 
@@ -32,23 +33,23 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // Listing::create([
-        //     'title' => 'Laravel Senior Developer', 
-        //     'tags' => 'laravel, javascript',
-        //     'company' => 'Acme Corp',
-        //     'location' => 'Boston, MA',
-        //     'email' => 'email1@email.com',
-        //     'website' => 'https://www.acme.com',
+        //     'project_name' => 'Quarantine Pass Generator',
+        //     'website' => 'https://www.youtube.com/watch?v=U86HRU3wH7A',
+        //     'developer' => 'Jesther Costinar',
+        //     'email' => 'jesther.jc15@gmail.com',
+        //     'telephone' => '09218989341',
+        //     'tags' => 'Java',
         //     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima et illo reprehenderit quas possimus voluptas repudiandae cum expedita, eveniet aliquid, quam illum quaerat consequatur! Expedita ab consectetur tenetur delensiti?'
         // ]);
 
         // Listing::create([
-        //     'title' => 'Full-Stack Engineer',
-        //     'tags' => 'laravel, backend ,api',
-        //     'company' => 'Stark Industries',
-        //     'location' => 'New York, NY',
-        //     'email' => 'email2@email.com',
-        //     'website' => 'https://www.starkindustries.com',
+        //     'project_name' => 'Kahopes',
+        //     'website' => 'https://www.youtube.com/watch?v=q-oqM9dtqSw',
+        //     'developer' => 'Jesther Costinar',
+        //     'email' => 'jesther.jc15@gmail.com',
+        //     'telephone' => '09218989341',
+        //     'tags' => 'VB.net',
         //     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima et illo reprehenderit quas possimus voluptas repudiandae cum expedita, eveniet aliquid, quam illum quaerat consequatur! Expedita ab consectetur tenetur delensiti?'
-        //   ]);
+        // ]);
     }
 }

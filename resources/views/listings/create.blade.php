@@ -95,7 +95,7 @@
                     Create Project
                 </button>
 
-                <a href="/" class="text-gray-800 text-sm font-semibold border px-6 py-2 rounded-lg hover:text-gray-600 hover:border-gray-600 bg-gray-400"> Back </a>
+                <a href="/" class="text-black-400 text-sm font-semibold border px-6 py-2 rounded-lg hover:text-black-600 hover:border-gray-500 bg-gray-400"> Back </a>
             </div>
         </form>
     </x-card>
