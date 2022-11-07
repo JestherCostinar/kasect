@@ -21,7 +21,6 @@ Route::get('/register', [UserController::class, 'register'])->name('user.registe
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/authenticate', [UserController::class, 'authenticate'])->name('user.authenticate');
 Route::post('/store', [UserController::class, 'store'])->name('user.store');
-
 Route::post('/logout', [UserController::class, 'logout'])->name('user.logout')->middleware('auth');
 
 
