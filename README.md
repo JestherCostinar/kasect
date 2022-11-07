@@ -1,3 +1,5 @@
+<h1 style="color: #FF0000;" align="center">KASECT</h1>
+
 ![image](https://user-images.githubusercontent.com/56688615/200154994-56c235ee-bff8-494f-a7b5-2581c521caf5.png)
 
 ## 💾 Technologies
@@ -7,13 +9,13 @@ Programming Languages and Framework:
 - <strong>Laravel</strong> is a web application framework with expressive, elegant syntax. We’ve already laid the foundation — freeing you to create without sweating the small things.
 - <strong>PHP</strong> is an open-source server-side scripting language that many devs use for web development.
 - <strong>Tailwinnd CSS</strong> works by scanning all of your HTML files, JavaScript components, and any other templates for class names, generating the corresponding styles and then writing them to a static CSS file.
-- <strong>JavaScript</strong> is a scripting or programming language that allows you to implement complex features on web pages
+- <strong>Alpine JS</strong> is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web. Plop in a script tag and get going.
 - <strong>MySQL</strong> is a relational database management system. Databases are the essential data repository for all software applications. 
 
 ## Installation
 #### Requirements:
 
-- <strong>PHP 7.4
+- <strong>PHP 8.16
 - Node
 - MySQL</strong>
 
