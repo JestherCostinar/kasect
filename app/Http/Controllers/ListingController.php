@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProjectFormRequest;
 use App\Models\Listing;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ListingController extends Controller
 {
@@ -51,26 +53,26 @@ class ListingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectFormRequest $request)
     {
-        $formFields = $request->validate([
-            'project_name' => 'required',
-            'website' => 'required|unique:listings,website',
-            'developer' => 'required',
-            'email' => ['required', 'email'],
-            'telephone' => 'required',
-            'website' => 'required',        
-            'tags' => 'required',
-            'description' => 'required',
-        ]);
+        $request->validated();
 
+        $project = [
+            'user_id' => Auth::id(),
+            'project_name' => $request->project_name,
+            'website' => $request->website,
+            'developer' => $request->developer,
+            'email' => $request->email,
+            'telephone' => $request->telephone,
+            'tags' => $request->tags,
+            'description' => $request->description
+        ];
+        
         if ($request->hasFile('logo')) {
-            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+            $project['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        $formFields['user_id'] = auth()->id();
-
-        Listing::create($formFields);
+        Listing::create($project);
 
         return redirect(route('listing.index'))->with('message', 'Listing created successfully!');
     }
@@ -113,24 +115,15 @@ class ListingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProjectFormRequest $request, $id)
     {
-        $formFields = $request->validate([
-            'project_name' => 'required',
-            'website' => 'required',
-            'developer' => 'required',
-            'email' => ['required', 'email'],
-            'telephone' => 'required',
-            'website' => 'required',
-            'tags' => 'required',
-            'description' => 'required',
-        ]);
+        $projectField = $request->validated();
 
         if ($request->hasFile('logo')) {
-            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+            $projectField['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        Listing::where('id', $id)->update($formFields);
+        Listing::where('id', $id)->update($projectField);
 
         return back()->with('message', 'Listing edited successfully!');
     }
