@@ -24,7 +24,18 @@ Route::post('/store', [UserController::class, 'store'])->name('user.store');
 Route::post('/logout', [UserController::class, 'logout'])->name('user.logout')->middleware('auth');
 
 
-// LISTING CONTROLLER
+// OPTIMIZE VERSION OF PROJECT CONTROLLER
+Route::prefix('/projects')->group(function() {
+    Route::get('/', [ListingController::class, 'index'])->name('project.index');
+    Route::get('/{id}', [ListingController::class, 'show'])->name('project.show');
+    Route::get('/create', [ListingController::class, 'create'])->name('project.create');
+    Route::post('/', [ListingController::class, 'store'])->name('project.store');
+    Route::get('/edit/{id}', [ListingController::class, 'edit'])->name('project.edit');
+    Route::patch('/{id}', [ListingController::class, 'update'])->name('project.update');
+    Route::delete('/{id}', [ListingController::class, 'destroy'])->name('project.destroy');
+}->middleware('auth')->name('projects');
+
+
 Route::get('/', [ListingController::class, 'index'])->name('listing.index');
 Route::get('/listings/create', [ListingController::class, 'create'])->name('listing.create')->middleware('auth');
 Route::post('/listings', [ListingController::class, 'store'])->name('listing.store')->middleware('auth');
