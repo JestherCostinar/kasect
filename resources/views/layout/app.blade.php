@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="hidden sm:flex sm:items-center">
-                    <a href="/"
+                    <a href="{{ route('project.index') }}"
                         class="text-gray-800 text-base font-semibold hover:text-purple-600 mr-4">Home</a>
                     <a href="#"
                         class="text-gray-800 text-base font-semibold hover:text-purple-600 mr-4">About Me</a>

@@ -7,6 +7,7 @@ use App\Models\Listing;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Expr\List_;
 
 class ListingController extends Controller
 {
@@ -86,7 +87,7 @@ class ListingController extends Controller
     public function show($id)
     {
         $data = [
-            'listing' => Listing::findOrFail($id)
+            'listing' => Listing::findOrFail($id),
         ];
 
         return view('listings.show', $data);
