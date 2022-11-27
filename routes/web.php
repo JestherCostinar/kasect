@@ -22,27 +22,18 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 Route::post('/authenticate', [UserController::class, 'authenticate'])->name('user.authenticate');
 Route::post('/store', [UserController::class, 'store'])->name('user.store');
 Route::post('/logout', [UserController::class, 'logout'])->name('user.logout')->middleware('auth');
+
+
+// LISTING CONTROLLER
+// OPTIMIZE VERSION
+
+
+Route::get('/', [ListingController::class, 'index'])->name('listing.index');
+Route::get('/listings/create', [ListingController::class, 'create'])->name('listing.create')->middleware('auth');
+Route::post('/listings', [ListingController::class, 'store'])->name('listing.store')->middleware('auth');
+Route::get('/{id}', [ListingController::class, 'show'])->name('listing.show');
+Route::get('/listings/{id}', [ListingController::class, 'edit'])->name('listing.edit')->middleware('auth');
+Route::patch('/{id}', [ListingController::class, 'update'])->name('listing.update')->middleware('auth');
+Route::delete('/{id}', [ListingController::class, 'destroy'])->name('listing.destroy')->middleware('auth');
+
 Route::get('listing/manage', [ListingController::class, 'manage'])->name('listing.manage')->middleware('auth');
-
-
-// OPTIMIZE VERSION OF PROJECT CONTROLLER
-Route::prefix('project')->middleware('auth')->group(function () {
-    Route::get('/', [ListingController::class, 'index'])->name('project.index');
-    Route::get('/{id}', [ListingController::class, 'show'])->name('project.show');
-    Route::get('/create', [ListingController::class, 'create'])->name('project.create');
-    Route::post('/', [ListingController::class, 'store'])->name('project.store');
-    Route::get('/edit/{id}', [ListingController::class, 'edit'])->name('project.edit');
-    Route::patch('/{id}', [ListingController::class, 'update'])->name('project.update');
-    Route::delete('/{id}', [ListingController::class, 'destroy'])->name('project.destroy');
-});
-
-
-// Route::get('/', [ListingController::class, 'index'])->name('listing.index');
-// Route::get('/listings/create', [ListingController::class, 'create'])->name('listing.create')->middleware('auth');
-// Route::post('/listings', [ListingController::class, 'store'])->name('listing.store')->middleware('auth');
-// Route::get('/{id}', [ListingController::class, 'show'])->name('listing.show');
-// Route::get('/listings/{id}', [ListingController::class, 'edit'])->name('listing.edit')->middleware('auth');
-// Route::patch('/{id}', [ListingController::class, 'update'])->name('listing.update')->middleware('auth');
-// Route::delete('/{id}', [ListingController::class, 'destroy'])->name('listing.destroy')->middleware('auth');
-
-// Route::get('listing/manage', [ListingController::class, 'manage'])->name('listing.manage')->middleware('auth');

@@ -39,12 +39,12 @@
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between py-5">
                 <div>
-                    <a href="/"><img class="w-16 p-3" src="{{ asset('images/kasect-logo.png') }}" alt=""></a>
+                    <a href="{{ route('listing.index') }}"><img class="w-16 p-3" src="{{ asset('images/kasect-logo.png') }}" alt=""></a>
                     
                 </div>
 
                 <div class="hidden sm:flex sm:items-center">
-                    <a href="{{ route('project.index') }}"
+                    <a href="{{ route('listing.index') }}"
                         class="text-gray-800 text-base font-semibold hover:text-purple-600 mr-4">Home</a>
                     <a href="#"
                         class="text-gray-800 text-base font-semibold hover:text-purple-600 mr-4">About Me</a>
