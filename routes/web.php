@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Repository
+Route::delete('/repository/{id}', [RepositoryController::class, 'destroy'])->name('repository.destroy')->middleware('auth');
+
 Route::post('/repository', [RepositoryController::class, 'store'])->name('repository.store')->middleware('auth');
 
 Route::get('/repository/{id}', [RepositoryController::class, 'show'])->name('repository.show')->middleware('auth');

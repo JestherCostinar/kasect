@@ -96,6 +96,9 @@ class RepositoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if($id)
+            ProjectFile::destroy($id);
+
+        return redirect()->back()->with('message', 'Project deleted successfully!');
     }
 }
