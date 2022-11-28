@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProjectFormRequest;
 use App\Models\Listing;
+use App\Models\ProjectFile;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -88,6 +89,7 @@ class ListingController extends Controller
     {
         $data = [
             'listing' => Listing::findOrFail($id),
+            'files' => ProjectFile::where('listing_id', $id)->get()
         ];
 
         return view('listings.show', $data);
