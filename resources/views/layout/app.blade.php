@@ -37,7 +37,7 @@
     <!-- component -->
     <div class="bg-white shadow">
         <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between py-5">
+            <div class="flex items-center justify-between py-3">
                 <div>
                     <a href="{{ route('listing.index') }}"><img class="w-16 p-3"
                             src="{{ asset('images/kasect-logo.png') }}" alt=""></a>
@@ -114,7 +114,9 @@
     </main>
 
     <x-flash-message></x-flash-message>
+
     @yield('script')
+
 </body>
 
 </html>

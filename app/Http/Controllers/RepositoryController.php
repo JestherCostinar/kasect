@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProjectFile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RepositoryController extends Controller
 {
@@ -36,7 +38,17 @@ class RepositoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = ['listing_id' => $request->project_id];
+
+        if ($request->hasFile('attachment')) {
+            foreach ($request->file('attachment') as $file) {
+                $data['file_path'] = $file->store('repository-1000' . Auth::id(), 'public');
+                $data['file_name'] = $file->getClientOriginalName();
+                ProjectFile::create($data);
+            }
+        }
+
+        return redirect(route('repository.show', $request->project_id))->with('message', 'Project created successfully!');
     }
 
     /**
@@ -47,7 +59,10 @@ class RepositoryController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('repository.index', [
+            'project_files' => ProjectFile::where('listing_id', $id)->orderBy('created_at', 'desc')->get(),
+            'project_id' => $id
+        ]);
     }
 
     /**

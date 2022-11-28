@@ -83,7 +83,7 @@
 
                                         </td>
                                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                            <div class="text-sm leading-5 text-gray-500"><a href="{{ route('repository.index') }}"
+                                            <div class="text-sm leading-5 text-gray-500"><a href="{{ route('repository.show', $listing->id) }}"
                                                     class="font-medium text-indigo-600 hover:text-indigo-500 underline">Manage
                                                     Repository</a></div>
                                         </td>

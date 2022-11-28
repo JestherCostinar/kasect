@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Repository
-Route::get('/repository', [RepositoryController::class, 'index'])->name('repository.index')->middleware('auth');
+Route::post('/repository', [RepositoryController::class, 'store'])->name('repository.store')->middleware('auth');
+
+Route::get('/repository/{id}', [RepositoryController::class, 'show'])->name('repository.show')->middleware('auth');
 
 // USER CONTROLLER
 Route::get('/register', [UserController::class, 'register'])->name('user.register')->middleware('guest');
