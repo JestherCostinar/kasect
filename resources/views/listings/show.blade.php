@@ -54,31 +54,155 @@
                         <p class="text-sm text-left indent-8"> {{ $listing->description }}
                         </p>
 
-                        <div class="flex space-x-2 justify-start">
-                            <a href="https://www.linkedin.com/in/jesther-costinar/" type="button"
-                                class="inline-block px-6 py-2.5 bg-slate-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-slate-800 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">GitHub</a>
-                            <a href="https://github.com/" type="button"
-                                class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">LinkedIn</a>
-                            <a href="https://jesthercostinar.github.io/jesthercostinar/" type="button"
-                                class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out">Website</a>
-                        
-                        </div>
+
 
                     </div>
+                    <div class="bg-white py-5 sm:grid-cols-3">
+                        {{-- <div class="px-4 py-5 sm:px-6 ">
+                            <h3 class="text-lg font-medium leading-6 text-gray-900 ">File Management System</h3>
+                        </div> --}}
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-6 sm:mt-0">
+                            <ul role="list" class="divide-y divide-gray-200 rounded-md border border-gray-200">
+                                <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
+                                    <div class="flex w-0 flex-1 items-center">
+                                        <!-- Heroicon name: mini/paper-clip -->
+                                        <svg class="h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span class="ml-2 w-0 flex-1 truncate">resume_back_end_developer.pdf</span>
+                                    </div>
+                                    <div class="ml-4 flex-shrink-0">
+                                        <a href="#"
+                                            class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                                    </div>
+                                </li>
+                                <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
+                                    <div class="flex w-0 flex-1 items-center">
+                                        <!-- Heroicon name: mini/paper-clip -->
+                                        <svg class="h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span class="ml-2 w-0 flex-1 truncate">coverletter_back_end_developer.pdf</span>
+                                    </div>
+                                    <div class="ml-4 flex-shrink-0">
+                                        <a href="#"
+                                            class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                                    </div>
+                                </li>
+                                <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
+                                    <div class="flex w-0 flex-1 items-center">
+                                        <!-- Heroicon name: mini/paper-clip -->
+                                        <svg class="h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span class="ml-2 w-0 flex-1 truncate">coverletter_back_end_developer.pdf</span>
+                                    </div>
+                                    <div class="ml-4 flex-shrink-0">
+                                        <a href="#"
+                                            class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                                    </div>
+                                </li>
+                                <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
+                                    <div class="flex w-0 flex-1 items-center">
+                                        <!-- Heroicon name: mini/paper-clip -->
+                                        <svg class="h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span class="ml-2 w-0 flex-1 truncate">coverletter_back_end_developer.pdf</span>
+                                    </div>
+                                    <div class="ml-4 flex-shrink-0">
+                                        <a href="#"
+                                            class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                                    </div>
+                                </li>
+                                <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
+                                    <div class="flex w-0 flex-1 items-center">
+                                        <!-- Heroicon name: mini/paper-clip -->
+                                        <svg class="h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span class="ml-2 w-0 flex-1 truncate">coverletter_back_end_developer.pdf</span>
+                                    </div>
+                                    <div class="ml-4 flex-shrink-0">
+                                        <a href="#"
+                                            class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                                    </div>
+                                </li>
+                                <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
+                                    <div class="flex w-0 flex-1 items-center">
+                                        <!-- Heroicon name: mini/paper-clip -->
+                                        <svg class="h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span class="ml-2 w-0 flex-1 truncate">coverletter_back_end_developer.pdf</span>
+                                    </div>
+                                    <div class="ml-4 flex-shrink-0">
+                                        <a href="#"
+                                            class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                                    </div>
+                                </li>
+                                <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
+                                    <div class="flex w-0 flex-1 items-center">
+                                        <!-- Heroicon name: mini/paper-clip -->
+                                        <svg class="h-5 w-5 flex-shrink-0 text-gray-400"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                            aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span class="ml-2 w-0 flex-1 truncate">coverletter_back_end_developer.pdf</span>
+                                    </div>
+                                    <div class="ml-4 flex-shrink-0">
+                                        <a href="#"
+                                            class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </dd>
+                    </div>
+
+                    <div class="flex space-x-2 justify-start">
+                        <a href="https://www.linkedin.com/in/jesther-costinar/" type="button"
+                            class="inline-block px-6 py-2.5 bg-slate-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-slate-800 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">GitHub</a>
+                        <a href="https://github.com/" type="button"
+                            class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">LinkedIn</a>
+                        <a href="https://jesthercostinar.github.io/jesthercostinar/" type="button"
+                            class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out">Website</a>
+                    </div>
                 </div>
+
             </div>
         </x-card>
 
         @if ($listing->user_id == Auth::id())
             <x-card class="mt-4 p-2 flex space-x-6">
-            <a href="/listings/{{ $listing->id }}"><i class="fa-solid fa-pencil">Edit</i></a>
-            <form action="{{ route('listing.destroy', $listing->id) }}" method="post">
-                @csrf
-                @method('DELETE')
-                <button class="text-red-500"><i class="fa-solid fa-trash">Delete</i></button>
-            </form>
+                <a href="/listings/{{ $listing->id }}"><i class="fa-solid fa-pencil">Edit</i></a>
+                <form action="{{ route('listing.destroy', $listing->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="text-red-500"><i class="fa-solid fa-trash">Delete</i></button>
+                </form>
             </x-card>
         @endauth
-                
-    </div>
+
+</div>
 @endsection

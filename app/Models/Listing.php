@@ -29,4 +29,9 @@ class Listing extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function projectFile()
+    {
+        return $this->hasMany(ProjectFile::class, 'listing_id');
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\RepositoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// USER CONTROLLER
+// Repository
+Route::get('/repository', [RepositoryController::class, 'index'])->name('repository.index')->middleware('auth');
 
+// USER CONTROLLER
 Route::get('/register', [UserController::class, 'register'])->name('user.register')->middleware('guest');
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/authenticate', [UserController::class, 'authenticate'])->name('user.authenticate');
@@ -37,3 +40,5 @@ Route::patch('/{id}', [ListingController::class, 'update'])->name('listing.updat
 Route::delete('/{id}', [ListingController::class, 'destroy'])->name('listing.destroy')->middleware('auth');
 
 Route::get('listing/manage', [ListingController::class, 'manage'])->name('listing.manage')->middleware('auth');
+
+
