@@ -180,7 +180,7 @@
                                             <div class="text-sm leading-5 text-gray-500">{{ $project->file_name }}</div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200" width="20%">
-                                            <div class="text-sm leading-5 text-gray-500"><a href=""
+                                            <div class="text-sm leading-5 text-gray-500"><a href=" {{ asset('storage/' . $project->file_path)  }}" download
                                                     class="font-medium text-blue-600 hover:text-blue-500">Download</a> | <a href=""
                                                     class="font-medium text-red-600 hover:text-red-500">Remove</a></div>
                                         </td>
