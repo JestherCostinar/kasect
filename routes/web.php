@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::delete('/repository/{id}', [RepositoryController::class, 'destroy'])->name('repository.destroy')->middleware('auth');
 
 Route::post('/repository', [RepositoryController::class, 'store'])->name('repository.store')->middleware('auth');
+Route::post('/repository/create-folder', [RepositoryController::class, 'createFolder'])->name('repository.folder')->middleware('auth');
 
 Route::get('/repository/{id}', [RepositoryController::class, 'show'])->name('repository.show')->middleware('auth');
 

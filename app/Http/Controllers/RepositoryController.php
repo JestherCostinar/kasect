@@ -3,32 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\ProjectFile;
+use App\Models\Folder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class RepositoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('repository.index', [
-            'listings' => auth()->user()->listings()->get()
-        ]);
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -61,32 +42,11 @@ class RepositoryController extends Controller
     {
         return view('repository.index', [
             'project_files' => ProjectFile::where('listing_id', $id)->orderBy('created_at', 'desc')->get(),
+            'folders' => Folder::where('listing_id', $id)->orderBy('created_at', 'desc')->get(),
             'project_id' => $id
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -100,5 +60,15 @@ class RepositoryController extends Controller
             ProjectFile::destroy($id);
 
         return redirect()->back()->with('message', 'Project deleted successfully!');
+    }
+
+    public function createFolder(Request $request)
+    {
+        Folder::create([
+            'folder_name' => $request->folder,
+            'listing_id' => $request->project_id]
+        );
+
+        return redirect(route('repository.show', $request->project_id))->with('message', 'Folder created successfully!');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProjectFormRequest;
+use App\Models\Folder;
 use App\Models\Listing;
 use App\Models\ProjectFile;
 use Illuminate\Contracts\Session\Session;
@@ -89,7 +90,9 @@ class ListingController extends Controller
     {
         $data = [
             'listing' => Listing::findOrFail($id),
-            'files' => ProjectFile::where('listing_id', $id)->get()
+            'files' => ProjectFile::where('listing_id', $id)->get(),
+            'folders' => Folder::where('listing_id', $id)->orderBy('created_at', 'desc')->get(),
+
         ];
 
         return view('listings.show', $data);
