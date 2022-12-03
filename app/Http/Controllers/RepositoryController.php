@@ -41,8 +41,8 @@ class RepositoryController extends Controller
     public function show($id)
     {
         return view('repository.index', [
-            'project_files' => ProjectFile::where('listing_id', $id)->orderBy('created_at', 'desc')->get(),
-            'folders' => Folder::where('listing_id', $id)->orderBy('created_at', 'desc')->get(),
+            'project_files' => ProjectFile::where('listing_id', $id)->orderBy('created_at')->get(),
+            'folders' => Folder::where('listing_id', $id)->orderBy('created_at')->get(),
             'project_id' => $id
         ]);
     }

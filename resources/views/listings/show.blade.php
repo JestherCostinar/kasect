@@ -76,7 +76,7 @@
                                             <span class="ml-2 w-0 flex-1 truncate">{{ $folder->folder_name }}</span>
                                         </div>
                                         <div class="ml-4 flex-shrink-0">
-                                            <a href="{{ url('/on-going-maintenance') }}" 
+                                            <a href="{{ url('/on-going-maintenance') }}"
                                                 class="font-medium text-green-600 hover:text-green-500">Open</a>
                                         </div>
                                     </li>
@@ -112,18 +112,26 @@
                         <a href="https://jesthercostinar.github.io/jesthercostinar/" type="button"
                             class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out">Website</a>
                     </div>
+
                 </div>
 
             </div>
         </x-card>
 
         @if ($listing->user_id == Auth::id())
-            <x-card class="mt-4 p-2 flex space-x-6">
-                <a href="/listings/{{ $listing->id }}"><i class="fa-solid fa-pencil">Edit</i></a>
+            <x-card class="mt-4 p-2 flex space-x-2">
+                
+                <a href="/listings/{{ $listing->id }}"
+                    class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
+                    <p class="text-sm font-medium leading-none text-white">Edit</p>
+                </a>
                 <form action="{{ route('listing.destroy', $listing->id) }}" method="post">
                     @csrf
                     @method('DELETE')
-                    <button class="text-red-500"><i class="fa-solid fa-trash">Delete</i></button>
+                    <button 
+                        class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-red-700 hover:bg-red-600 focus:outline-none rounded">
+                        <p class="text-sm font-medium leading-none text-white">Delete</p>
+                    </button>
                 </form>
             </x-card>
         @endauth

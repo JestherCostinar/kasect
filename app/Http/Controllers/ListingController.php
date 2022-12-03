@@ -91,7 +91,7 @@ class ListingController extends Controller
         $data = [
             'listing' => Listing::findOrFail($id),
             'files' => ProjectFile::where('listing_id', $id)->get(),
-            'folders' => Folder::where('listing_id', $id)->orderBy('created_at', 'desc')->get(),
+            'folders' => Folder::where('listing_id', $id)->orderBy('created_at')->get(),
 
         ];
 
@@ -149,7 +149,7 @@ class ListingController extends Controller
 
     public function manage() {
         return view('listings.manage', [
-            'listings' => auth()->user()->listings()->get()
+            'listings' => auth()->user()->listings()->orderBy('id', 'desc')->get()
         ]);
     } 
 }
