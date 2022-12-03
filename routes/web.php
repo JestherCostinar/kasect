@@ -3,6 +3,8 @@
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\RepositoryController;
 use App\Http\Controllers\UserController;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Contact
+Route::get('/contact', function () {
+    Mail::to('jesther.jc15@gmail.com')->send(new ContactMail());
+});
 
 // Login and Register Controller
 Route::get('/register', [UserController::class, 'register'])->name('user.register')->middleware('guest');

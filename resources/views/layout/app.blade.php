@@ -51,7 +51,8 @@
                         Me</a>
                     <a href="#"
                         class="text-gray-800 text-basem font-semibold hover:text-purple-600 mr-4">Stacks</a>
-                    <a href="#" class="text-gray-800 text-base font-semibold hover:text-purple-600">Blog</a>
+                    <a href="#" class="text-gray-800 text-base font-semibold hover:text-purple-600 mr-4">Blog</a>
+                    <a href="#" class="text-gray-800 text-base font-semibold hover:text-purple-600">Contact</a>
                 </div>
 
                 @auth
